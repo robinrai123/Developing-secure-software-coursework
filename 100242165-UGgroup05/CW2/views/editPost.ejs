@@ -1,0 +1,42 @@
+<%- include('_header'); -%>
+
+<div class="container d-grid gap-3">
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <h2>Edit Post</h2>
+        </div>
+    </div>
+
+    <form action="/editPostsubmit" method="post">
+
+    <input type="hidden" name="postdetails" value="<%=title%>" hidden>
+    
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <input type="text" value="<%=title%>" name="title" required>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-3">
+            <input type="text" value="<%=content%>" name="description" required>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-3">
+            <h6>Captcha here potentially</h6>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-3">
+            <button class="btn btn-lg btn-primary">Submit Post</button>
+        </div>
+    </div>
+    </form>
+</div>
+
+
+
+
+
+<%- include('_footer'); -%>

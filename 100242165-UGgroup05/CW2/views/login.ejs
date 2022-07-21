@@ -1,0 +1,85 @@
+<%- include('_header'); -%>
+<body>
+    <div class="container d-grid gap-3">
+        <div class="row justify-content-center">
+            <div class="col-3">
+                <h2>Login</h2>
+            </div>
+        </div>
+
+		<div class="login">
+			<h1>Login</h1>
+            <p1>Note: Admins will NEVER ask for your password, username or 2FA code. Do NOT give these away!</p1>
+			<form action="/auth" method="post">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+				<label for="username">
+					<!-- font awesome icon -->
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<input type="submit" value="Login">
+			</form>
+		</div>
+        
+
+<!--         <div class="row justify-content-center">
+            <div class="col-3">
+                <input type="search" placeholder="Login" required>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-3">
+                <input type="password" placeholder="Password" required>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-md-center">
+            <div class="col-3">
+                <h6>Captcha here potentially</h6>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-md-center">
+            <div class="col-3">
+                <button class="btn btn-lg btn-primary" href="/account" id="loginbutton">Login</button>
+            </div>
+        </div>
+    </div> -->
+
+
+    <script>
+        document.querySelector('button')
+            .addEventListener('click', (e) => {
+                e.preventDefault();
+                const username = document
+                    .querySelector('#username').value;
+ 
+                const password = document
+                    .querySelector('#password').value;
+                     
+                fetch('/', {
+                    method: 'POST',
+                    headers: {
+                        Authorization: 'Bearer abcdxyz',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        username,
+                        password,
+                    }),
+                })
+                    .then((res) => {
+                        return res.json();
+                    })
+                    .then((data) => console.log(data));
+            });
+    </script>
+
+</body>
+<%- include('_footer'); -%>

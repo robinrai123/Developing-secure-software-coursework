@@ -1,0 +1,68 @@
+<%- include('_header'); -%>
+
+<div class="container d-grid gap-2">
+    <form action="/registerauth" method="POST">
+
+    Passwords must contain one special character, one number, and be longer than 10 characters :)
+
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <input type="text" name="registername" placeholder="Enter a firstname" required>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <input type="email" name="registeremail" placeholder="Enter an email" required>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <input type="text" name="registerusername" placeholder="Enter a username" required>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-3">
+            <input type="password" name="registerpassword" placeholder="Enter a password" required>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-3">
+            <input type="password" name="registerpassword2" placeholder="Confirm your password" required>
+        </div>
+    </div>
+    Enter the six numbers.
+    <div class="row justify-content-md-center">
+        <div class="col-3">
+            <img src='<%= pic1 %> ' style="width:15%;"/>
+            <img src='<%= pic2 %>' style="width:15%;"/>
+            <img src='<%= pic3 %>' style="width:15%;"/>
+            <img src='<%= pic4 %>' style="width:15%;"/>
+            <img src='<%= pic5 %>' style="width:15%;"/>
+            <img src='<%= pic6 %>' style="width:15%;"/>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-3">
+            <input type="text" name="captcha" placeholder="Enter the numbers" required>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-3">
+            <br>
+            <input type="checkbox" id="ageverify" name="ageverify" value="Verify Age" required>By ticking this checkbox I agree that I am of at least 13 years of age</input>
+            <br>
+            <input class="btn btn-lg btn-primary" type="submit" value="Register">
+        </div>
+    </div>
+</form>
+</div>
+
+
+
+<%- include('_footer'); -%>

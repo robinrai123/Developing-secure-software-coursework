@@ -1,0 +1,35 @@
+{
+  "name": "cw2",
+  "version": "1.0.0",
+  "description": "A secure web-based blog that mitigates security vulnerabilities.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.20.0",
+    "chalk": "^4.1.2",
+    "content-type": "^1.0.4",
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-rate-limit": "^6.4.0",
+    "express-session": "^1.17.2",
+    "googleapis": "^100.0.0",
+    "node-serialize": "^0.0.4",
+    "nodemailer": "^6.7.5",
+    "rate-limiter": "^0.2.0",
+    "raw-body": "^2.5.1",
+    "sharp": "^0.30.4",
+    "sqlite3": "^5.0.4",
+    "toobusy-js": "^0.5.1",
+    "truncate": "^3.0.0",
+    "xss": "^1.0.11"
+  }
+}

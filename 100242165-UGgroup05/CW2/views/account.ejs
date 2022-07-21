@@ -1,0 +1,38 @@
+<%- include('_header'); -%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 d-grid gap-2">
+            <form action="/createPost">
+            <button class="btn btn-primary btn-lg">Create Post</button>
+            </form>
+            <% posts.forEach(post=> { %>
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" action="/editPost">
+                        <input name="postdetails" value="<%=post.title%>" hidden>
+                        <button value="<%=post.title%>" class="btn btn-primary btn-lg">Edit Post</button>
+                    </form>
+
+                    <form method="post" action="/deletePost">
+                        <input name="postdetails" value="<%=post.title%>" hidden>
+                        <button value="<%=post.title%>" class="btn btn-danger">Delete Post</button>
+                    </form>
+<!--                     <form method="post" action="/deletePost">
+                        <input name="postdetails" value="<%=post.title%>" hidden>
+                        <button type="button" class="btn btn-danger">Delete Post</button>
+                    </form> -->
+                    <h5 class="card-title"><%=post.title%></h5>
+                    <h6 class="card-text"><%=post.content%></h6>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+        <div class="col-4 card-text-center">
+            
+        </div>
+    </div>
+</div>
+
+
+<%- include('_footer'); -%>

@@ -1,0 +1,33 @@
+<%- include('_header'); -%>
+
+<body>
+<div class="container d-grid gap-3">
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <h2>2 Factor Authentication</h2>
+        </div>
+    </div>
+
+    <div class="login">
+        <h1>2 Factor Authentication</h1>
+        <form action="/otpAuth" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <input type="hidden" name="username" value="<%= username %>">
+            <input type="hidden" name="password" value="<%= password %>">
+            <input type="number" name="otp" placeholder="2FA" id="otp" required>
+            <input type="submit" value="Verify">
+        </form>
+    </div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+<%- include('_footer'); -%>
